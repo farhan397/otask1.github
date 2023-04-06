@@ -16,12 +16,8 @@ const Foam1component = ({getVissiblityVALUE}) => {
   const [isvisibless, setisvisibless] = useState(0);
    const [isvisible, setisvisible] = useState(0);
   const [issubmit, setissubmit] = useState(false);
+  
   const handleupclick=()=>{
-   
-
-     
-   
-     
    
         console.log(jobloking)
      // console.log(userexp)

@@ -211,10 +211,13 @@ const getvisiblefoam2=(VALUES)=>{
                     onClick={()=>{
                       if(showfoam===1){
                       setshowfoam(0);
+                      
+                      
                   
                       }
                       if(showfoam===2){
                         setshowfoam(0);
+                       
                     
                         }
                       
@@ -237,8 +240,12 @@ const getvisiblefoam2=(VALUES)=>{
                   <button
                     class="btn1"
                     onClick={()=>{
-                      if(showfoam===2)
+                      if(showfoam===2){
                       setshowfoam(1);
+                      }
+                      if(showfoam===0){
+                        
+                      }
                   
 
                     }}
@@ -282,11 +289,11 @@ const getvisiblefoam2=(VALUES)=>{
                     Shift Time
                   </button>
                 </div>
-                {/* <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> */}
+               
               </blockquote>
             {
               showfoam=== 0 &&(
-             <Foam1component getVissiblityVALUE={getVissiblityVALUE}  />
+             <Foam1component getVissiblityVALUE={getVissiblityVALUE} />
             )}
             {
               showfoam=== 1 && (

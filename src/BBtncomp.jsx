@@ -13,7 +13,7 @@ const BBtncomp = ({handleupclick}) => {
                 >
                   Next
                 </button>
-              </div>
+        </div>
     </>
   )
 }
