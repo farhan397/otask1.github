@@ -1,11 +1,12 @@
 import {combineReducers} from 'redux'
-import cardItems from './reducer'
-
-
-import Condinfo from './reducer'
-import shiftinfo from './reducer'
+import userinformation from './reducer'
+import condinformation from './reducer'
+import shiftinformation from './reducer'
+import clearinformation from './reducer'
 
 export default combineReducers({
-   cardItems,
-    
+    userinformation,
+    condinformation,
+    shiftinformation,
+    clearinformation
 })

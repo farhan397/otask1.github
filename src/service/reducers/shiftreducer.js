@@ -1,14 +1,14 @@
-import { ADD_USER_INFO } from '../constants'
+import { ADD_SHIFT_INFO } from '../constants'
 const initialState = {
-    infodata: []
+    shiftdata: []
 }
-export default function userinformation(state = [], action) {
+export default function shiftinformation(state = [], action) {
     switch (action.type) {
-        case ADD_USER_INFO:
+        case ADD_SHIFT_INFO:
             // console.warn("reducer",action)
             return [
                 ...state,
-                {infodata: action.data}
+                {shiftdata: action.data}
             ]
         default:
             return state

@@ -1,14 +1,14 @@
-import { ADD_USER_INFO } from '../constants'
+import { ADD_COND_INFO } from '../constants'
 const initialState = {
-    infodata: []
+    conddata: []
 }
-export default function userinformation(state = [], action) {
+export default function condinformation(state = [], action) {
     switch (action.type) {
-        case ADD_USER_INFO:
+        case ADD_COND_INFO:
             // console.warn("reducer",action)
             return [
                 ...state,
-                {infodata: action.data}
+                {conddata: action.data}
             ]
         default:
             return state
