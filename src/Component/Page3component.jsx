@@ -5,16 +5,20 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from "react-redux";
 import {adduserinfo} from '../service/actions/actions'
 import userinformation from '../service/reducers/reducer';
+<<<<<<< HEAD
 import condinformation from '../service/reducers/reducer';
 import Apidata from '../tabledata/Apidata';
 
 
+=======
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
 
 
 const Page3component = (Props) => {
   const dispatch = useDispatch();
 
   const foam1data = useSelector(state => state.userinformation);
+<<<<<<< HEAD
  const foam2data = useSelector(state => state.condinformation);
  const foam3data = useSelector(state => state.shiftinformation);
 
@@ -27,6 +31,14 @@ console.log("foam3con",foam3data)
   
   const [jobdata, setjobdata] = useState([]);
   const [jobdatapost, setjobdatapost] = useState([]);
+=======
+  const foam2data = useSelector(state => state.condinformation);
+  const foam3 = useSelector(state => state.shiftinformation);
+
+
+  
+  const [jobdata, setjobdata] = useState([]);
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
   const [monday, setmonday] = useState("");
   const [tuesday, settuesday] = useState("");
   const [wednesday, setwednesday] = useState("");
@@ -39,8 +51,11 @@ console.log("foam3con",foam3data)
   }
 
   const jobpostclick = () => {
+<<<<<<< HEAD
     // console.log("foam3data", foam3data)
     console.log("searchbarsss", Props)
+=======
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
     let foam3info = {
       stmonday: monday,
       sttuesday: tuesday,
@@ -48,6 +63,7 @@ console.log("foam3con",foam3data)
       stthursday: thursday,
       stfriday: friday
     }
+<<<<<<< HEAD
     let foamlength=foam1data.length-1;
     let userinformations=foam1data[foamlength]
     console.log("foamlength",userinformations)
@@ -60,13 +76,25 @@ console.log("foam3con",foam3data)
     jobdata.push(userinformations,condinformations,foam3info)
     setjobdatapost([...jobdatapost,jobdata])
     console.log("jobbbdata",jobdatapost)
+=======
+    jobdata.push([...foam1data, foam2data, foam3info])
+    setjobdata([...jobdata])
+    console.log("jobpostinfo", jobdata)
+    console.log("jobpostinfo", jobdata.length)
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
     Props.addToshiftHandler({
       jobpostdata: jobdata
 
     })
+<<<<<<< HEAD
   console.log("foam1datachk",foam1data)
    
   //  Props.clearuserinfo()
+=======
+
+   
+    
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
 
   }
 
@@ -210,15 +238,22 @@ console.log("foam3con",foam3data)
               paddingTop: 7,
               alignContent: "center",
               textAlign: "center",
+<<<<<<< HEAD
               
+=======
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
             }}
           >
             Sunday
           </div>
           <input
             type="text"
+<<<<<<< HEAD
             disabled
             // value="07pm-04am"
+=======
+            value="07pm-04am"
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
             style={{
               borderRadius: "0px 10px 10px 0px",
             }}
@@ -247,8 +282,14 @@ console.log("foam3con",foam3data)
           </div>
           <input
             type="text"
+<<<<<<< HEAD
             placeholder='8pm-5am'
               onChange={(e) => setmonday(e.target.value)}
+=======
+            // value="08pm-05am"
+            placeholder='8pm-5am'
+            onChange={(e) => setmonday(e.target.value)}
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
             style={{
               borderRadius: "0px 10px 10px 0px",
             }}
@@ -415,7 +456,11 @@ console.log("foam3con",foam3data)
           </div>
           <input
             type="text"
+<<<<<<< HEAD
             disabled
+=======
+            value="07pm-04am"
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
             style={{
               borderRadius: "0px 10px 10px 0px",
             }}
@@ -441,7 +486,11 @@ console.log("foam3con",foam3data)
       <div style={{
         marginTop: 30
       }}>
+<<<<<<< HEAD
        <Apidata/>
+=======
+       
+>>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
       </div>
     </>
   )
