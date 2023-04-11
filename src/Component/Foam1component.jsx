@@ -1,7 +1,7 @@
 import { Alert } from "bootstrap";
 import React,{useState,useEffect} from "react";
 
-const Foam1component = ({getVissiblityVALUE}) => {
+const Foam1component = (Props) => {
   const [jobloking, setjobloking] = useState("");
   const [userexp, setUserexp] = useState("");
   const [useredu, setUseredu] = useState("");
@@ -16,8 +16,13 @@ const Foam1component = ({getVissiblityVALUE}) => {
   const [isvisibless, setisvisibless] = useState(0);
    const [isvisible, setisvisible] = useState(0);
   const [issubmit, setissubmit] = useState(false);
-  
+  console.log("adduserinfoprops",Props)
   const handleupclick=()=>{
+    // console.log("adduserinfoprops",Props)   
+
+     
+   
+     
    
         console.log(jobloking)
      // console.log(userexp)
@@ -69,7 +74,15 @@ const Foam1component = ({getVissiblityVALUE}) => {
      // )
      if (issubmit === true) {
        setisvisible(1);
-       getVissiblityVALUE(1)
+        Props.getVissiblityVALUE(1)
+        Props.addTouserinfoHandler({
+
+          joblokings:jobloking,
+          usereduc:useredu,
+          userexps:userexp,
+          userskill:userskil,
+          userdescp:userdesc
+        })
        // setchangecolorbtn("blue");
        // setchangecolordiv("blue");
  

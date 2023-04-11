@@ -1,8 +1,11 @@
 import React,{useEffect, useState} from 'react'
-import BBtncomp from './BBtncomp';
+
 import Foam1component from './Foam1component'
 import Page3component from './Page3component';
 import Page2component from './Page2component';
+import Foam1Container from '../containers/Foam1Container';
+import Foam2Container from '../containers/Foam2Container';
+import Foam3Container from '../containers/Foam3Container';
 
 
 function Btncomponent() {
@@ -22,12 +25,7 @@ function Btncomponent() {
   const [showfoam, setshowfoam] = useState(0);
   const [foam1, setfoam1] = useState(0);
 
-//   const handleupclick=(isvisible)=>{
-//     debugger
-//     setfoam1(1);
-//     console.log(foam1)
-    
-// }
+
 
 const getpreviousfoam2=(VALUES)=>{
   debugger
@@ -122,7 +120,7 @@ const getpreviousfoam2=(VALUES)=>{
     return foamheight;
   }
 const getprevioussfoam2=(VALUES)=>{
-  debugger
+  
   console.log(VALUES)
   setshowfoam(VALUES);
   
@@ -143,7 +141,7 @@ const getVissiblityVALUE=(VALUES)=>{
   
 }
 const getvisiblefoam2=(VALUES)=>{
-  debugger
+  
   console.log(VALUES)
   
   
@@ -211,13 +209,10 @@ const getvisiblefoam2=(VALUES)=>{
                     onClick={()=>{
                       if(showfoam===1){
                       setshowfoam(0);
-                      
-                      
                   
                       }
                       if(showfoam===2){
                         setshowfoam(0);
-                       
                     
                         }
                       
@@ -240,12 +235,8 @@ const getvisiblefoam2=(VALUES)=>{
                   <button
                     class="btn1"
                     onClick={()=>{
-                      if(showfoam===2){
+                      if(showfoam===2)
                       setshowfoam(1);
-                      }
-                      if(showfoam===0){
-                        
-                      }
                   
 
                     }}
@@ -289,20 +280,20 @@ const getvisiblefoam2=(VALUES)=>{
                     Shift Time
                   </button>
                 </div>
-               
+                {/* <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> */}
               </blockquote>
             {
               showfoam=== 0 &&(
-             <Foam1component getVissiblityVALUE={getVissiblityVALUE} />
+             <Foam1Container getVissiblityVALUE={getVissiblityVALUE}  />
             )}
             {
               showfoam=== 1 && (
-             <Page2component getvisiblefoam2={getvisiblefoam2} getpreviousfoam2={getpreviousfoam2}/>
+             <Foam2Container getvisiblefoam2={getvisiblefoam2} getpreviousfoam2={getpreviousfoam2}/>
             
             )}
              {
               showfoam=== 2 && (
-             <Page3component getprevioussfoam2={getprevioussfoam2}/>
+             <Foam3Container getprevioussfoam2={getprevioussfoam2}/>
             
             )}
 

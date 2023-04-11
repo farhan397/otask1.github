@@ -1,3 +1,4 @@
-export const Info_List="Info_List"
-export const Cond_list="Cond_List"
-export const Shif_list="Shif_list"
+export const ADD_USER_INFO="ADD_USER_INFO"
+export const ADD_COND_INFO="ADD_COND_INFO"
+export const ADD_SHIFT_INFO="ADD_SHIFT_INFO"
+export const CLEAR_ARRAY="CLEAR_ARRAY"

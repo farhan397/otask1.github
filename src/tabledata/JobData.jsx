@@ -1,46 +1,21 @@
 import React,{useState} from 'react'
 import DataTable from 'react-data-table-component'
+import { useSelector } from 'react-redux';
 
-
-
-
-
-const getjobdata = [
-    {
-    //  id: "j1",
-    jobtitle: "softwere developer",
-    salery: 60000,
-    
-    },
-    {
-    //   id: "j2",
-     jobtitle: "billing exective",
-     salery: 40000,
-     
-     },
-     {
-    //   id: "j3",
-     jobtitle: "credentialling",
-     salery: 60000,
-     
-     },
-     {
-    //   id: "j4",
-     jobtitle: "electical engenering",
-     salery: 70000,
-     
-     },
-  ]
 
   const JobData = () => {
-    const [jobinfo,setJobinfo]=useState(getjobdata);
+    const jobdata = useSelector(state => state.shiftinformation);
+
+    const [jobinfo,setJobinfo]=useState(jobdata);
     const [updatestate,Setupdatestate]=useState(" ");
     const [jobtitles,setjobtitles]=useState(" ");
     const [salerys,setsalerys]=useState(" ");
     const initialValue={job_title:" ",j_salery:" "};
   const [foamValue, setFormValue]= useState(initialValue);
 
+  // setJobinfo(jobdata);
 
+  console.log("getdatappprops",jobdata)
 
     const deletejob=(jobtitle)=>{
         console.log(jobtitle);
@@ -70,20 +45,21 @@ const getjobdata = [
         
     }
     const handleupclick=()=>{
-
+       setJobinfo(jobdata)
+       console.log("jobinofoo",jobinfo)
         
-       console.log(jobtitles);
-       console.log(salerys);
+      //  console.log(jobtitles);
+      //  console.log(salerys);
         
-        let jobdetail={
-       jobtitle: jobtitles,
-        salery:salerys,
+      //   let jobdetail={
+      //  jobtitle: jobtitles,
+      //   salery:salerys,
           
-        }
-        console.log(jobdetail)
+      //   }
+      //   console.log(jobdetail)
         
-        setJobinfo([...jobinfo,jobdetail])
-        console.log(setJobinfo)
+      //   setJobinfo([...jobinfo,jobdetail])
+      //   console.log(setJobinfo)
        
     }
     
@@ -93,7 +69,7 @@ const getjobdata = [
 
     {
       name:"job title",
-      selector:(row)=>row.jobtitle,
+       selector:(row)=>row.jobtitle
       
 
     },
@@ -147,14 +123,9 @@ const getjobdata = [
  selectableRows
  selectableRowsHighlight
  highlightOnHover
-//  actions={
-//     <button className="btn btn-sm btn-info">Add</button>
-//  }
+
  subHeader
-//  subHeaderComponent={
-//     <input type="text" placeholder="search here---"/>
-//  }
-//  subHeaderAlign="center"
+
  
  />
  </>

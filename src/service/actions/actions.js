@@ -1,22 +1,34 @@
-import {Info_List} from '../constants'
+import {ADD_USER_INFO} from '../constants'
+import {ADD_COND_INFO} from '../constants'
+import {ADD_SHIFT_INFO} from '../constants'
+import {CLEAR_ARRAY} from '../constants'
+
 export const adduserinfo =(data)=>{
-     console.log("action",data)
+     console.warn("actionuserinfo",data)
     return {
-        type:Info_List,
+        type:ADD_USER_INFO,
         data:data
     }
 }
-export const AddCondInfo =(data)=>{
-    console.log("action",data)
-   return {
-       type:Cond_list,
-       data:data
-   }
+export const addcondinfo =(data1)=>{
+     console.warn("actioncondinfo",data1,ADD_COND_INFO)
+    return {
+        type:ADD_COND_INFO,
+        data1:data1
+    }
 }
-export const AddShiftInfo =(data)=>{
-    console.log("action",data)
+export const addshiftinfo =(data2)=>{
+     console.warn("shiftaction",data2)
+    return {
+        type:ADD_SHIFT_INFO,
+        data2:data2
+    }
+}
+export const removeduserinfo =()=>{
+    // console.warn("CLEARARRAY",data)
    return {
-       type:Shif_list,
-       data:data
+       type:CLEAR_ARRAY,
+        // data:data
+       
    }
 }

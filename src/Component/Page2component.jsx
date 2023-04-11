@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 
-const Page2component = ({getvisiblefoam2,getpreviousfoam2}) => {
+const Page2component = (Props) => {
+  // {getvisiblefoam2,getpreviousfoam2}
     const [hrerror, sethrerror] = useState("");
     const [esderror, setesderror] = useState("");
     const [carearlavelerror, setcarearerror] = useState("");
@@ -17,10 +18,11 @@ const Page2component = ({getvisiblefoam2,getpreviousfoam2}) => {
   const [fissubmit, setfissubmit] = useState(false);
   
   const previousfaom1 = () => {
-    getpreviousfoam2(0);
+   
+    Props.getpreviousfoam2(0);
   }
     const handleupclick2 = () => {
-        //  console.log(jobloking)
+          console.log("cond",Props)
         // console.log(userexp)
         // console.log(useredu)
         // console.log(userskil)
@@ -62,8 +64,16 @@ const Page2component = ({getvisiblefoam2,getpreviousfoam2}) => {
         }
         if (fissubmit === true) {
           setisvisible(2);
-          getvisiblefoam2(2);
-    
+          Props. getvisiblefoam2(2);
+          Props.addTocondinfoHandler({
+            hourlyrate:hourrate,
+            expdate:esdate,
+            careerlavel:carearlavel,
+            genders:gender,
+            equpdescrption:fdescrption
+          })
+          
+  
           console.log(isvisible);
         }
       };

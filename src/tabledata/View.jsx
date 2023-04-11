@@ -3,7 +3,7 @@ import React from "react";
 const View = ({ jobinfo, deleteuserinfo, edituserinfo }) => {
   return jobinfo.map((jobinformation) => (
     <tr key={jobinformation.id}>
-      <td>{jobinformation.jobtitle}</td>
+      <td>{jobinformation.shiftdata.jobpostdata.infodata.joblokings}</td>
       <td>{jobinformation.salery}</td>
 
       <td>
