@@ -1,5 +1,6 @@
 import { Alert } from "bootstrap";
 import React,{useState,useEffect} from "react";
+import { useSelector } from 'react-redux';
 
 const Foam1component = (Props) => {
   const [jobloking, setjobloking] = useState("");
@@ -16,19 +17,33 @@ const Foam1component = (Props) => {
   const [isvisibless, setisvisibless] = useState(0);
    const [isvisible, setisvisible] = useState(0);
   const [issubmit, setissubmit] = useState(false);
-  console.log("adduserinfoprops",Props)
-  const handleupclick=()=>{
-    // console.log("adduserinfoprops",Props)   
 
-     
-   
-     
+
+  const getindex = useSelector(state => state.getindex);
+  console.log("ddd",getindex.editinedex)
+ 
+  const foam1data = useSelector(state => state.userinformation);
+  console.log("rrrd",foam1data)
+  let length=getindex.editinedex
+  let userinformations=foam1data[length]
+  console.log("length",userinformations.infodata.usereduc)
+  // setjobloking(userinformations.infodata.usereduc)
+useEffect=(()=>{
+  // // let jobloking=userinformations.infodata.joblokings
+  // setjobloking(userinformations.infodata.joblokings)
+  //  setUseredu(userinformations.infodata.usereduc),
+  // setUserexp(userinformations.infodata.userexps),
+  // setUserskil(userinformations.infodata.userskill),
+  // setUserdesc(userinformations.infodata.userdescp)
+})
+  
+  
+
+  const handleupclick=()=>{
+
    
         console.log(jobloking)
-     // console.log(userexp)
-     // console.log(useredu)
-     // console.log(userskil)
-     // console.log(userdesc)
+     
      if (jobloking === "") {
        setjoblokingerror("select value");
        setissubmit(false);

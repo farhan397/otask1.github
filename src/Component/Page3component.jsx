@@ -5,45 +5,38 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from "react-redux";
 import {adduserinfo} from '../service/actions/actions'
 import userinformation from '../service/reducers/reducer';
-<<<<<<< HEAD
-import condinformation from '../service/reducers/reducer';
-import Apidata from '../tabledata/Apidata';
-
-
-=======
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
+import ViewPostjob from '../tabledata/ViewPostjob';
 
 
 const Page3component = (Props) => {
-  const dispatch = useDispatch();
+  const [jobdata, setjobdata] = useState(0);
+  const [clickstatusm, setclickstatusm] = useState(0);
+  const [clickstatustu, setclickstatustu] = useState(0);
+  const [clickstatusw, setclickstatusw] = useState(0);
+  const [clickstatust, setclickstatust] = useState(0);
+  const [clickstatusf, setclickstatusf] = useState(0);
+  
+  const [monday, setmonday] = useState("08am-05am");
+  const [tuesday, settuesday] = useState("07pm-04am");
+  const [wednesday, setwednesday] = useState("08pm-05am");
+  const [thursday, setthursday] = useState("07pm-03am");
+  const [friday, setfriday] = useState("10pm-07am");
+  
 
   const foam1data = useSelector(state => state.userinformation);
-<<<<<<< HEAD
- const foam2data = useSelector(state => state.condinformation);
- const foam3data = useSelector(state => state.shiftinformation);
-
- 
-
-
-
-console.log("foam3con",foam3data)
-
-  
-  const [jobdata, setjobdata] = useState([]);
-  const [jobdatapost, setjobdatapost] = useState([]);
-=======
   const foam2data = useSelector(state => state.condinformation);
-  const foam3 = useSelector(state => state.shiftinformation);
-
+ 
+    let foamlength=foam1data.length-1;
+    let userinformations=foam1data[foamlength]
+    let foam2length=foam2data.length-1;
+    let condinformations=foam2data[foam2length]
+   
+    const foam3 = useSelector(state => state.shiftinformation);
+    console.log("foam3data",foam3)
+    // const dispatch = useDispatch();
 
   
-  const [jobdata, setjobdata] = useState([]);
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
-  const [monday, setmonday] = useState("");
-  const [tuesday, settuesday] = useState("");
-  const [wednesday, setwednesday] = useState("");
-  const [thursday, setthursday] = useState("");
-  const [friday, setfriday] = useState("");
+  
   
 
   const getprivousfoam2 = () => {
@@ -51,56 +44,96 @@ console.log("foam3con",foam3data)
   }
 
   const jobpostclick = () => {
-<<<<<<< HEAD
-    // console.log("foam3data", foam3data)
-    console.log("searchbarsss", Props)
-=======
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
-    let foam3info = {
+
+    if(clickstatusm===1)
+    {
+      
+    }
+
+    Props.addToshiftHandler({
+      lokingfor:userinformations.infodata.joblokings,
+      education:userinformations.infodata.usereduc,
+      experience:userinformations.infodata.userexps,
+      skill:userinformations.infodata.userskill,
+      description:userinformations.infodata.userdescp,
+      careerlavel:condinformations.conddata.careerlavel,
+      expdate:condinformations.conddata.expdate,
+      genders:condinformations.conddata.genders,
+      hourlyrate:condinformations.conddata.hourlyrate,
+      equpdescrption:condinformations.conddata.equpdescrption,
+    
       stmonday: monday,
       sttuesday: tuesday,
       stwednesday: wednesday,
       stthursday: thursday,
       stfriday: friday
-    }
-<<<<<<< HEAD
-    let foamlength=foam1data.length-1;
-    let userinformations=foam1data[foamlength]
-    console.log("foamlength",userinformations)
+      
+   })
+   alert("Job Post sucessfully")
 
-    let foam2length=foam2data.length-1;
-    let condinformations=foam2data[foam2length]
-    console.log("foamlength",condinformations)
-
-   
-    jobdata.push(userinformations,condinformations,foam3info)
-    setjobdatapost([...jobdatapost,jobdata])
-    console.log("jobbbdata",jobdatapost)
-=======
-    jobdata.push([...foam1data, foam2data, foam3info])
-    setjobdata([...jobdata])
-    console.log("jobpostinfo", jobdata)
-    console.log("jobpostinfo", jobdata.length)
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
-    Props.addToshiftHandler({
-      jobpostdata: jobdata
-
-    })
-<<<<<<< HEAD
-  console.log("foam1datachk",foam1data)
-   
-  //  Props.clearuserinfo()
-=======
+   setjobdata(1);
+   Props.getvisiblefoam3(3);
 
    
     
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
 
   }
+  const getBackgroundColorm= () => {
+    let color;
+    if (clickstatusm === 0) {
+      color = "#d5d8da";
+    } else if (clickstatusm === 1) {
+      color = "#006ab3";
+    }
+    
+    return color;
+  }
+  const getBackgroundColortu = () => {
+    let color;
+    if (clickstatustu === 0) {
+      color = "#d5d8da";
+    } else if (clickstatustu === 1) {
+      color = "#006ab3";
+    }
+    
+    return color;
+  }
+  const getBackgroundColorw = () => {
+    let color;
+    if (clickstatusw === 0) {
+      color = "#d5d8da";
+    } else if (clickstatusw === 1) {
+      color = "#006ab3";
+    }
+    
+    return color;
+  }
+  const getBackgroundColort = () => {
+    let color;
+    if (clickstatust === 0) {
+      color = "#d5d8da";
+    } else if (clickstatust === 1) {
+      color = "#006ab3";
+    }
+    
+    return color;
+  }
+  const getBackgroundColorf = () => {
+    let color;
+    if (clickstatusf === 0) {
+      color = "#d5d8da";
+    } else if (clickstatusf === 1) {
+      color = "#006ab3";
+    }
+    
+    return color;
+  }
+  
 
   
   return (
     <>
+  
       <blockquote
         class="blockquote mb-0"
         style={{
@@ -125,9 +158,10 @@ console.log("foam3con",foam3data)
           S
         </div>
         <div
-          class="divbtn1"
+          class="divbtn1" 
+          onClick={()=>setclickstatusm(1)}
           style={{
-            backgroundColor: "#006ab3",
+             backgroundColor: getBackgroundColorm(),
             borderRadius: "5px",
             width: "30px",
             color: "white",
@@ -140,8 +174,11 @@ console.log("foam3con",foam3data)
         </div>
         <div
           class="divbtn1"
+          onClick={()=>setclickstatustu(1)
+          
+          }
           style={{
-            backgroundColor: "#006ab3",
+            backgroundColor: getBackgroundColortu(),
             borderRadius: "5px",
             width: "30px",
             color: "white",
@@ -159,8 +196,9 @@ console.log("foam3con",foam3data)
         >
           <div
             class="divw1"
+            onClick={()=>setclickstatusw(1)}
             style={{
-              backgroundColor: "#006ab3",
+              backgroundColor: getBackgroundColorw(),
               borderRadius: "5px",
               borderRadius: "5px",
               width: "30px",
@@ -175,8 +213,9 @@ console.log("foam3con",foam3data)
           </div>
           <div
             class="divw2"
+            onClick={()=>setclickstatust(1)}
             style={{
-              backgroundColor: "#006ab3",
+              backgroundColor: getBackgroundColort(),
               borderRadius: "5px",
               width: "30px",
               color: "white",
@@ -185,12 +224,13 @@ console.log("foam3con",foam3data)
               textAlign: "center",
             }}
           >
-            t
+            T
           </div>
           <div
             class="divbtn1"
+            onClick={()=>setclickstatusf(1)}
             style={{
-              backgroundColor: "#006ab3",
+              backgroundColor: getBackgroundColorf(),
               borderRadius: "5px",
               width: "30px",
               color: "white",
@@ -203,6 +243,7 @@ console.log("foam3con",foam3data)
           </div>
           <div
             class="divbtn1"
+           
             style={{
               backgroundColor: "#d5d8da",
               borderRadius: "5px",
@@ -238,22 +279,14 @@ console.log("foam3con",foam3data)
               paddingTop: 7,
               alignContent: "center",
               textAlign: "center",
-<<<<<<< HEAD
-              
-=======
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
             }}
           >
             Sunday
           </div>
           <input
             type="text"
-<<<<<<< HEAD
             disabled
             // value="07pm-04am"
-=======
-            value="07pm-04am"
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
             style={{
               borderRadius: "0px 10px 10px 0px",
             }}
@@ -282,14 +315,10 @@ console.log("foam3con",foam3data)
           </div>
           <input
             type="text"
-<<<<<<< HEAD
-            placeholder='8pm-5am'
-              onChange={(e) => setmonday(e.target.value)}
-=======
-            // value="08pm-05am"
-            placeholder='8pm-5am'
+           defaultValue={monday}
+            //  value="08am-05am"
+            placeholder='8am-5am'
             onChange={(e) => setmonday(e.target.value)}
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
             style={{
               borderRadius: "0px 10px 10px 0px",
             }}
@@ -324,6 +353,7 @@ console.log("foam3con",foam3data)
           </div>
           <input
             type="text"
+            defaultValue={tuesday}
             placeholder='07pm-04am'
             onChange={(e) => settuesday(e.target.value)}
             style={{
@@ -354,6 +384,7 @@ console.log("foam3con",foam3data)
           </div>
           <input
             type="text"
+            defaultValue={wednesday}
             placeholder='08pm-05am'
             onChange={(e) => setwednesday(e.target.value)}
             style={{
@@ -390,6 +421,7 @@ console.log("foam3con",foam3data)
           </div>
           <input
             type="text"
+            defaultValue={thursday}
             placeholder='07pm-04am'
             onChange={(e) => setthursday(e.target.value)}
             style={{
@@ -420,6 +452,7 @@ console.log("foam3con",foam3data)
           </div>
           <input
             type="text"
+            defaultValue={friday}
             placeholder='08pm-05am'
             onChange={(e) => setfriday(e.target.value)}
             style={{
@@ -456,11 +489,7 @@ console.log("foam3con",foam3data)
           </div>
           <input
             type="text"
-<<<<<<< HEAD
-            disabled
-=======
-            value="07pm-04am"
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
+           disabled
             style={{
               borderRadius: "0px 10px 10px 0px",
             }}
@@ -486,12 +515,12 @@ console.log("foam3con",foam3data)
       <div style={{
         marginTop: 30
       }}>
-<<<<<<< HEAD
-       <Apidata/>
-=======
        
->>>>>>> 367e02354208b21a8c2abe4e93927851a1be8d19
       </div>
+
+      {jobdata===1&&
+      <ViewPostjob/>
+      }
     </>
   )
 }
